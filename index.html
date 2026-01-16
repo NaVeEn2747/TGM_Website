@@ -58,6 +58,15 @@
     border-radius: 14px;
     padding: 16px;
     box-shadow: 0 10px 22px rgba(0,0,0,0.4);
+
+    /* 🔥 MOTION ADDED */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .song-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.55);
   }
 
   .song-title {
@@ -93,6 +102,22 @@
     text-decoration: none;
     border-radius: 5px;
     font-size: 13px;
+    font-weight: 500;
+
+    /* 🔥 BUTTON MOTION */
+    transition: background-color 0.25s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .song-link:hover {
+    background-color: #ffffff;
+  }
+
+  .song-link:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   }
 
   footer {
@@ -113,13 +138,13 @@
       align-items: stretch;
       gap: 20px;
       padding: 24px;
-      flex-wrap: nowrap;          /* 🔥 IMPORTANT */
-      overflow-x: auto;           /* safety */
+      flex-wrap: nowrap;
+      overflow-x: auto;
     }
 
     .song-card {
-      width: 300px;               /* fixed card width */
-      flex-shrink: 0;             /* 🔥 prevents wrapping */
+      width: 300px;
+      flex-shrink: 0;
     }
 
     .lyrics-box {
