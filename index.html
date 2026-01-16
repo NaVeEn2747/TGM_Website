@@ -18,12 +18,12 @@
     overflow-x: hidden;
   }
 
-  body {
-    font-family: "Segoe UI", sans-serif;
-    background: linear-gradient(135deg, #0a2540, #0a2540);
-    color: #ffffff;
-    padding: 16px;
-  }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #0a2540, #0a2540);
+  color: #ffffff;
+}
 
   header {
     text-align: center;
@@ -42,9 +42,12 @@
   /* 🔹 MOBILE SAFE GRID */
 /* 📱 MOBILE DEFAULT: full width cards */
 .songs-container {
+  width: 100vw;                 /* 🔥 FULL SCREEN WIDTH */
   display: grid;
-  grid-template-columns: 1fr;   /* 🔥 FULL WIDTH */
+  grid-template-columns: 1fr;   /* 🔥 ONE CARD PER ROW */
   gap: 16px;
+  padding: 12px;                /* 👈 safe inner spacing */
+  box-sizing: border-box;
 }
 
 /* 🖥 DESKTOP & TABLET */
@@ -56,6 +59,8 @@
 
   .song-card {
     background-color: #112f4f;
+    width: 100%;
+    margin: 0;
     border-radius: 10px;
     padding: 14px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.35);
@@ -105,16 +110,13 @@
   }
 
   /* 🖥 DESKTOP ONLY */
-  @media (min-width: 768px) {
-    .songs-container {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .lyrics-box {
-      max-height: 180px;
-      overflow-y: auto;
-    }
+@media (min-width: 768px) {
+  .songs-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
   }
+}
 </style>
 </head>
 
@@ -196,4 +198,5 @@
 
 </body>
 </html>
+
 
