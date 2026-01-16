@@ -40,11 +40,19 @@
   }
 
   /* 🔹 MOBILE SAFE GRID */
+/* 📱 MOBILE DEFAULT: full width cards */
+.songs-container {
+  display: grid;
+  grid-template-columns: 1fr;   /* 🔥 FULL WIDTH */
+  gap: 16px;
+}
+
+/* 🖥 DESKTOP & TABLET */
+@media (min-width: 768px) {
   .songs-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+}
 
   .song-card {
     background-color: #112f4f;
@@ -188,3 +196,4 @@
 
 </body>
 </html>
+
