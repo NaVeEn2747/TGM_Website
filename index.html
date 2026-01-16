@@ -2,118 +2,189 @@
 <html lang="te">
 <head>
   <meta charset="UTF-8">
-
-  <!-- ✅ IMPORTANT FOR MOBILE -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu&family=Ponnala&display=swap" rel="stylesheet">
   <title>TGM SONGS</title>
 
-  <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #0a2540, #0a2540);
-      color: #ffffff;
-      padding: 16px;
-      margin: 0;
-    }
+<style>
+  * {
+    box-sizing: border-box;
+  }
 
-    header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
 
-    header h1 {
-      color: #ffffff;
-      font-size: 28px;
-    }
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #0a2540, #0a2540);
+    color: #ffffff;
+    padding: 16px;
+  }
 
-    header p {
-      color: #dcdcdc;
-      font-size: 13px;
-    }
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-    /* 🔹 Responsive grid */
+  header h1 {
+    font-size: 26px;
+  }
+
+  header p {
+    font-size: 13px;
+    color: #dcdcdc;
+  }
+
+  /* 🔹 MOBILE SAFE GRID */
+  .songs-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .song-card {
+    background-color: #112f4f;
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.35);
+  }
+
+  .song-title {
+    font-family: 'Ponnala', serif;
+    font-size: 18px;
+  }
+
+  .song-writer {
+    font-size: 12px;
+    color: #bbbbbb;
+    margin-bottom: 6px;
+  }
+
+  .lyrics-box {
+    background-color: #0a1e33;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: 'Noto Serif Telugu', serif;
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-line;
+    margin-bottom: 10px;
+    max-height: none;     /* 🔥 VERY IMPORTANT */
+    overflow: visible;    /* 🔥 VERY IMPORTANT */
+  }
+
+  .song-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    background-color: #4da3ff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 12px;
+    color: #aaa;
+  }
+
+  /* 🖥 DESKTOP ONLY */
+  @media (min-width: 768px) {
     .songs-container {
-      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
-
-    .song-card {
-      background-color: #112f4f;
-      border-radius: 10px;
-      padding: 14px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.35);
-      transition: transform 0.3s;
-    }
-
-    .song-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .song-title {
-      font-family: 'Ponnala', serif;
-      font-size: 20px;
-      margin-bottom: 2px;
-    }
-
-    .song-writer {
-      font-size: 12px;
-      color: #bbbbbb;
-      margin-bottom: 8px;
     }
 
     .lyrics-box {
-      background-color: #0a1e33;
-      padding: 10px;
-      border-radius: 6px;
-      font-family: 'Noto Serif Telugu', serif;
-      font-size: 13px;
-      line-height: 1.6;
-      white-space: pre-line;
       max-height: 180px;
       overflow-y: auto;
-      margin-bottom: 10px;
     }
+  }
+</style>
+</head>
 
-    .lyrics-box::-webkit-scrollbar {
-      width: 5px;
-    }
+<body>
 
-    .lyrics-box::-webkit-scrollbar-track {
-      background: #081a2c;
-    }
+<header>
+  <h1>🎵 THE GLORY MINISTRIES SONGS</h1>
+  <p>Worship through words</p>
+</header>
 
-    .lyrics-box::-webkit-scrollbar-thumb {
-      background: #4da3ff;
-      border-radius: 10px;
-    }
+<section class="songs-container">
 
-    .song-link {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 8px;
-      background-color: #4da3ff;
-      color: #000;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 13px;
-    }
+  <!-- SONG 1 -->
+  <div class="song-card">
+    <div class="song-title">బహుధీరుడా యేసయ్య</div>
+    <div class="song-writer">Written by Bro Pattem Titus</div>
+    <div class="lyrics-box"> 
+బహుధీరుడా యేసయ్య - నా ఆనంద క్షేత్రము నీవేనయ్యా 
+బహుశూరుడా యేసయ్య- నా క్షేమ శేఖరం నీవేనయ్యా 
 
-    .song-link:hover {
-      background-color: #ffffff;
-    }
+అనుదినము నీలో ఆనందింప చేసి 
+అనుక్షణం నీతో నడిపించుచున్న  
+    </div>
+    <a class="song-link" href="song1.html">Open Full Lyrics</a>
+  </div>
 
-    footer {
-      text-align: center;
-      margin-top: 30px;
-      color: #aaa;
-      font-size: 12px;
-    }
+  <!-- SONG 2 -->
+  <div class="song-card">
+    <div class="song-title">మహిమకు అర్హుడా</div>
+    <div class="song-writer">Written by Bro Pattem David Raju</div>
+    <div class="lyrics-box">
+నా దుర్గమా -  నా శైలమా 
+నా రక్షణ నిలయమా
+మహిమకు అర్హుడా.! కృపలకు పాత్రుడా.!
+ఆరాధనకు యోగ్యడా.! స్తుతులకు పాత్రుడా.!!
 
-    /* 📱 MOBILE SPECIFIC ADJUSTMENTS */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 24p
+నాశత్రువుల చేతినుండి - నను విడిపించిన దైవమా
+    </div>
+    <a class="song-link" href="song2.html">Open Full Lyrics</a>
+  </div>
+
+  <!-- SONG 3 -->
+  <div class="song-card">
+    <div class="song-title">నాక్షేమమా</div>
+    <div class="song-writer">Written By Bro Pattem David Raju</div>
+    <div class="lyrics-box">
+నీ చేతిలో చెక్కుకొంటివి
+నీ కౌగిళిలో దాచుకొంటివే 
+
+ఎంత జాలి-ఎంత కరుణ ప్రేమామయా
+ఇంతగ ప్రేమించినావు నా యేసయ్యా 
+
+జీవించలేని కష్టకాలములో ఎన్నెన్నో
+    </div>
+    <a class="song-link" href="song3.html">Open Full Lyrics</a>
+  </div>
+
+  <!-- SONG 4 -->
+  <div class="song-card">
+    <div class="song-title">దయామయా</div>
+    <div class="song-writer">Written by Bro Pattem David Raju</div>
+    <div class="lyrics-box">
+నీ చిత్తమే నేరవేర్చుము 
+నా యెడల నా యేసయ్య
+
+నీ చిత్తము చేయుటే నాకు నేర్పించుము
+దయామయా-కురుణామయా 
+
+తెలియకనే నిన్ను ఎరుగకనే
+    </div>
+    <a class="song-link" href="song4.html">Open Full Lyrics</a>
+  </div>
+
+</section>
+
+<footer>
+  © ALL RIGHTS RESERVED TO TGM CHIRALA
+</footer>
+
+</body>
+</html>
