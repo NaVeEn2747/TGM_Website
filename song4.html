@@ -1,46 +1,61 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="te">
 <head>
   <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu&family=Ponnala&display=swap" rel="stylesheet">
-  <title>Song One - Lyrics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu&family=Ponnala&display=swap" rel="stylesheet">
+  <title>దయామయా – Lyrics</title>
 
   <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #061a2f, #0a2540);
-      color: #ffffff;
-      padding: 30px;
+    * {
+      box-sizing: border-box;
     }
 
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: linear-gradient(135deg, #061a2f, #0a2540);
+      color: #ffffff;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* 📱 MOBILE FIRST */
     .container {
-      max-width: 800px;
-      margin: auto;
+      width: 94%;
+      margin: 20px auto 30px;
       background-color: #112f4f;
-      padding: 25px;
-      border-radius: 12px;
+      padding: 18px;
+      border-radius: 14px;
       box-shadow: 0 15px 30px rgba(0,0,0,0.5);
     }
 
     h1 {
-      color: #ffffff;
+      font-family: 'Ponnala', serif;
+      font-size: 22px;
       text-align: center;
-      margin-bottom: 20px;
+      margin: 0 0 16px;
     }
 
     .lyrics {
       background-color: #0a1e33;
-      padding: 20px;
-      border-radius: 8px;
+      padding: 14px;
+      border-radius: 10px;
       white-space: pre-line;
-      line-height: 1.7;
-      font-size: 15px;
+      font-family: 'Noto Serif Telugu', serif;
+      line-height: 1.75;
+      font-size: 14px;
     }
 
     .back-link {
-      display: inline-block;
-      margin-top: 20px;
+      display: block;
+      margin-top: 18px;
+      text-align: center;
       text-decoration: none;
       color: #4da3ff;
       font-size: 14px;
@@ -49,15 +64,32 @@
     .back-link:hover {
       color: #ffffff;
     }
+
+    /* 🖥 DESKTOP */
+    @media (min-width: 768px) {
+      .container {
+        max-width: 800px;
+        padding: 26px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .lyrics {
+        font-size: 15px;
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<div class="container">
-  <h1>దయామయా</h1>
+  <div class="container">
+    <h1>దయామయా</h1>
 
-  <div class="lyrics">
+    <div class="lyrics">
 పల్లవి
 నీ చిత్తమే నేరవేర్చుము - నా యెడల నా యేసయ్య
 నీ చిత్తము చేయుటే నాకు నేర్పించుము ||2||
@@ -79,11 +111,10 @@
 నా అక్కరలను ముందే ఎరిగి
 నాకు సహాయము చేసితివే
 శ్రేష్ఠమైన వరములు-నన్ను తృప్తి మరచితివో
-  </div>
+    </div>
 
-  <a class="back-link" href="index.html">← Back to Song List</a>
-</div>
+    <a class="back-link" href="index.html">← Back to Song List</a>
+  </div>
 
 </body>
 </html>
-
