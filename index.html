@@ -2,6 +2,8 @@
 <html lang="te">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu&family=Ponnala&display=swap" rel="stylesheet">
   <title>TGM SONGS</title>
 
@@ -14,67 +16,60 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100%;
     overflow-x: hidden;
   }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  background: linear-gradient(135deg, #0a2540, #0a2540);
-  color: #ffffff;
-}
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #0a2540, #0a2540);
+    color: #ffffff;
+  }
 
   header {
     text-align: center;
-    margin-bottom: 20px;
+    padding: 20px 12px;
   }
 
   header h1 {
     font-size: 26px;
+    margin: 0;
   }
 
   header p {
     font-size: 13px;
     color: #dcdcdc;
+    margin-top: 6px;
   }
 
-  /* 🔹 MOBILE SAFE GRID */
-/* 📱 MOBILE DEFAULT: full width cards */
-.songs-container {
-  display: flex;              /* 🔥 NOT grid on mobile */
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  padding: 12px 0;
-}
-
-/* 🖥 DESKTOP & TABLET */
-@media (min-width: 768px) {
+  /* =======================
+     📱 MOBILE FIRST LAYOUT
+     ======================= */
   .songs-container {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 12px 0 24px;
   }
-}
 
-.song-card {
-  width: 94%;                 /* 🔥 THIS CREATES IMAGE-2 LOOK */
-  background-color: #112f4f;
-  border-radius: 14px;
-  padding: 16px;
-  box-shadow: 0 10px 22px rgba(0,0,0,0.4);
-}
-
-  
+  .song-card {
+    width: 94%;
+    background-color: #112f4f;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.4);
+  }
 
   .song-title {
     font-family: 'Ponnala', serif;
     font-size: 18px;
+    margin-bottom: 4px;
   }
 
   .song-writer {
     font-size: 12px;
     color: #bbbbbb;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
 
   .lyrics-box {
@@ -86,8 +81,6 @@ body {
     line-height: 1.6;
     white-space: pre-line;
     margin-bottom: 10px;
-    max-height: none;     /* 🔥 VERY IMPORTANT */
-    overflow: visible;    /* 🔥 VERY IMPORTANT */
   }
 
   .song-link {
@@ -104,25 +97,36 @@ body {
 
   footer {
     text-align: center;
-    margin-top: 25px;
+    padding: 20px 0;
     font-size: 12px;
     color: #aaa;
   }
 
-  /* 🖥 DESKTOP ONLY */
-@media (min-width: 768px) {
-  .songs-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  /* =======================
+     🖥 DESKTOP – SINGLE ROW
+     ======================= */
+  @media (min-width: 992px) {
 
-  .song-card {
-    width: 100%;
+    .songs-container {
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      gap: 20px;
+      padding: 24px;
+      flex-wrap: nowrap;          /* 🔥 IMPORTANT */
+      overflow-x: auto;           /* safety */
+    }
+
+    .song-card {
+      width: 300px;               /* fixed card width */
+      flex-shrink: 0;             /* 🔥 prevents wrapping */
+    }
+
+    .lyrics-box {
+      max-height: 180px;
+      overflow-y: auto;
+    }
   }
-}
 </style>
 </head>
 
@@ -135,63 +139,53 @@ body {
 
 <section class="songs-container">
 
-  <!-- SONG 1 -->
   <div class="song-card">
     <div class="song-title">బహుధీరుడా యేసయ్య</div>
     <div class="song-writer">Written by Bro Pattem Titus</div>
-    <div class="lyrics-box"> 
-బహుధీరుడా యేసయ్య - నా ఆనంద క్షేత్రము నీవేనయ్యా 
-బహుశూరుడా యేసయ్య- నా క్షేమ శేఖరం నీవేనయ్యా 
+    <div class="lyrics-box">
+బహుధీరుడా యేసయ్య - నా ఆనంద క్షేత్రము నీవేనయ్యా
+బహుశూరుడా యేసయ్య - నా క్షేమ శేఖరం నీవేనయ్యా
 
-అనుదినము నీలో ఆనందింప చేసి 
-అనుక్షణం నీతో నడిపించుచున్న  
+అనుదినము నీలో ఆనందింప చేసి
+అనుక్షణం నీతో నడిపించుచున్న
     </div>
     <a class="song-link" href="song1.html">Open Full Lyrics</a>
   </div>
 
-  <!-- SONG 2 -->
   <div class="song-card">
     <div class="song-title">మహిమకు అర్హుడా</div>
     <div class="song-writer">Written by Bro Pattem David Raju</div>
     <div class="lyrics-box">
-నా దుర్గమా -  నా శైలమా 
+నా దుర్గమా - నా శైలమా
 నా రక్షణ నిలయమా
 మహిమకు అర్హుడా.! కృపలకు పాత్రుడా.!
 ఆరాధనకు యోగ్యడా.! స్తుతులకు పాత్రుడా.!!
-
-నాశత్రువుల చేతినుండి - నను విడిపించిన దైవమా
     </div>
     <a class="song-link" href="song2.html">Open Full Lyrics</a>
   </div>
 
-  <!-- SONG 3 -->
   <div class="song-card">
     <div class="song-title">నాక్షేమమా</div>
     <div class="song-writer">Written By Bro Pattem David Raju</div>
     <div class="lyrics-box">
 నీ చేతిలో చెక్కుకొంటివి
-నీ కౌగిళిలో దాచుకొంటివే 
+నీ కౌగిళిలో దాచుకొంటివే
 
 ఎంత జాలి-ఎంత కరుణ ప్రేమామయా
-ఇంతగ ప్రేమించినావు నా యేసయ్యా 
-
-జీవించలేని కష్టకాలములో ఎన్నెన్నో
+ఇంతగా ప్రేమించినావు నా యేసయ్యా
     </div>
     <a class="song-link" href="song3.html">Open Full Lyrics</a>
   </div>
 
-  <!-- SONG 4 -->
   <div class="song-card">
     <div class="song-title">దయామయా</div>
     <div class="song-writer">Written by Bro Pattem David Raju</div>
     <div class="lyrics-box">
-నీ చిత్తమే నేరవేర్చుము 
+నీ చిత్తమే నేరవేర్చుము
 నా యెడల నా యేసయ్య
 
 నీ చిత్తము చేయుటే నాకు నేర్పించుము
-దయామయా-కురుణామయా 
-
-తెలియకనే నిన్ను ఎరుగకనే
+దయామయా-కురుణామయా
     </div>
     <a class="song-link" href="song4.html">Open Full Lyrics</a>
   </div>
@@ -204,6 +198,3 @@ body {
 
 </body>
 </html>
-
-
-
