@@ -137,20 +137,15 @@
     color: #aaa;
   }
 
-  @media (min-width: 992px) {
-    .songs-container {
-      flex-direction: row;
-      justify-content: center;
-      gap: 20px;
-      padding: 24px;
-      overflow-x: auto;
-    }
-
-    .song-card {
-      width: 300px;
-      flex-shrink: 0;
-    }
-  }
+@media (min-width: 992px) { 
+  .songs-container { flex-direction: row; 
+                    justify-content: center; 
+                    gap: 20px; padding: 24px;
+                    overflow-x: auto; 
+                   } 
+  
+  .song-card { width: 300px; flex-shrink: 0; } 
+}
   
 </style>
 </head>
@@ -280,6 +275,7 @@ function filterSongs() {
 
 </body>
 </html>
+
 
 
 
