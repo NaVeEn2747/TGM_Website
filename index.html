@@ -122,8 +122,14 @@
     border-radius: 5px;
     font-size: 13px;
     font-weight: 500;
-  }
 
+/* 🔥 BUTTON MOTION */ 
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent; } 
+  
+  .song-link:hover { background-color: #ffffff; } 
+  .song-link:active { transform: scale(0.97); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+  
   footer {
     text-align: center;
     padding: 20px 0;
@@ -259,5 +265,6 @@ function filterSongs() {
 
 </body>
 </html>
+
 
 
