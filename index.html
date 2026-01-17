@@ -43,9 +43,29 @@
     margin-top: 6px;
   }
 
-  /* =======================
-     📱 MOBILE FIRST LAYOUT
-     ======================= */
+  /* 🔍 SEARCH BAR (ADDED) */
+  .search-container {
+    text-align: center;
+    padding: 12px;
+  }
+
+  #searchInput {
+    width: 94%;
+    max-width: 420px;
+    padding: 12px 16px;
+    font-size: 15px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background: #ffffff;
+    color: #000;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+  }
+
+  #searchInput:focus {
+    box-shadow: 0 0 0 3px #4da3ff;
+  }
+
   .songs-container {
     display: flex;
     flex-direction: column;
@@ -60,10 +80,7 @@
     border-radius: 14px;
     padding: 16px;
     box-shadow: 0 10px 22px rgba(0,0,0,0.4);
-
-    /* 🔥 MOTION ADDED */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    -webkit-tap-highlight-color: transparent;
   }
 
   .song-card:hover {
@@ -105,21 +122,6 @@
     border-radius: 5px;
     font-size: 13px;
     font-weight: 500;
-
-    /* 🔥 BUTTON MOTION */
-    transition: background-color 0.25s ease,
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .song-link:hover {
-    background-color: #ffffff;
-  }
-
-  .song-link:active {
-    transform: scale(0.97);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   }
 
   footer {
@@ -129,29 +131,18 @@
     color: #aaa;
   }
 
-  /* =======================
-     🖥 DESKTOP – SINGLE ROW
-     ======================= */
   @media (min-width: 992px) {
-
     .songs-container {
       flex-direction: row;
       justify-content: center;
-      align-items: stretch;
       gap: 20px;
       padding: 24px;
-      flex-wrap: nowrap;
       overflow-x: auto;
     }
 
     .song-card {
       width: 300px;
       flex-shrink: 0;
-    }
-
-    .lyrics-box {
-      max-height: 180px;
-      overflow-y: auto;
     }
   }
 </style>
@@ -163,64 +154,67 @@
   <h1>🎵 THE GLORY MINISTRIES SONGS</h1>
   <p>Worship through words</p>
 </header>
-  
+
+<!-- 🔍 SEARCH BAR (ADDED) -->
+<div class="search-container">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="🔍 Search song (Telugu / English)"
+    onkeyup="filterSongs()"
+  >
+</div>
+
 <marquee behavior="scroll" direction="left">
   🌿 Do visit our YouTube channel for spiritual messages 👉 
   <a href="https://www.youtube.com/@pattemdavidraju" target="_blank" style="font-size:16px; text-decoration:none;">
     <i class="fa-brands fa-youtube" style="font-size:16px; color:red;"></i>
-    <span style="color:rgb(255, 255, 255);">pattemdavidraju</span>
+    <span style="color:#fff;">pattemdavidraju</span>
   </a>
 </marquee>
 
 <section class="songs-container">
 
-  <div class="song-card">
+  <!-- SONG 1 -->
+  <div class="song-card" data-search="bahudheeruda yesayya pattem titus">
     <div class="song-title">బహుధీరుడా యేసయ్య</div>
     <div class="song-writer">Written by Bro Pattem Titus</div>
     <div class="lyrics-box">
 బహుధీరుడా యేసయ్య - నా ఆనంద క్షేత్రము నీవేనయ్యా
 బహుశూరుడా యేసయ్య - నా క్షేమ శేఖరం నీవేనయ్యా
-
-అనుదినము నీలో ఆనందింప చేసి
     </div>
     <a class="song-link" href="song1.html">Open Full Lyrics</a>
   </div>
 
-  <div class="song-card">
+  <!-- SONG 2 -->
+  <div class="song-card" data-search="mahimaku arhudaa pattem david raju">
     <div class="song-title">మహిమకు అర్హుడా</div>
     <div class="song-writer">Written by Bro Pattem David Raju</div>
     <div class="lyrics-box">
 నా దుర్గమా - నా శైలమా
 నా రక్షణ నిలయమా
-      
-మహిమకు అర్హుడా.! కృపలకు పాత్రుడా.!
-ఆరాధనకు యోగ్యడా.! స్తుతులకు పాత్రుడా.!!
     </div>
     <a class="song-link" href="song2.html">Open Full Lyrics</a>
   </div>
 
-  <div class="song-card">
+  <!-- SONG 3 -->
+  <div class="song-card" data-search="naakshemamaa pattem david raju">
     <div class="song-title">నాక్షేమమా</div>
     <div class="song-writer">Written By Bro Pattem David Raju</div>
     <div class="lyrics-box">
 నీ చేతిలో చెక్కుకొంటివి
 నీ కౌగిళిలో దాచుకొంటివే
-
-ఎంత జాలి-ఎంత కరుణ ప్రేమామయా
-ఇంతగా ప్రేమించినావు నా యేసయ్యా
     </div>
     <a class="song-link" href="song3.html">Open Full Lyrics</a>
   </div>
 
-  <div class="song-card">
+  <!-- SONG 4 -->
+  <div class="song-card" data-search="dayamayaa pattem david raju">
     <div class="song-title">దయామయా</div>
     <div class="song-writer">Written by Bro Pattem David Raju</div>
     <div class="lyrics-box">
 నీ చిత్తమే నేరవేర్చుము
 నా యెడల నా యేసయ్య
-
-నీ చిత్తము చేయుటే నాకు నేర్పించుము
-దయామయా-కురుణామయా
     </div>
     <a class="song-link" href="song4.html">Open Full Lyrics</a>
   </div>
@@ -231,14 +225,26 @@
   © ALL RIGHTS RESERVED TO TGM CHIRALA
 </footer>
 
+<!-- 🔍 SEARCH SCRIPT (ADDED) -->
+<script>
+function filterSongs() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const cards = document.getElementsByClassName("song-card");
+
+  for (let i = 0; i < cards.length; i++) {
+    const title = cards[i].querySelector(".song-title").innerText.toLowerCase();
+    const writer = cards[i].querySelector(".song-writer").innerText.toLowerCase();
+    const english = cards[i].getAttribute("data-search");
+
+    cards[i].style.display =
+      title.includes(input) ||
+      writer.includes(input) ||
+      (english && english.includes(input))
+        ? "block"
+        : "none";
+  }
+}
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
