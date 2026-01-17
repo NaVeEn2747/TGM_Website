@@ -138,56 +138,20 @@
     color: #aaa;
   }
 
-@media (min-width: 992px) {
-  .songs-wrapper {
-    position: relative;
-    width: 100%;
-   overflow-x: auto;
-   overflow-y: hidden;
-  }
+  @media (min-width: 992px) {
+    .songs-container {
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+      padding: 24px;
+      overflow-x: auto;
+    }
 
-  .songs-container {
-    flex-direction: row;
-    gap: 20px;
-    padding: 24px 60px; /* space for arrows */
-    overflow: hidden;
-    scroll-behavior: smooth;
+    .song-card {
+      width: 300px;
+      flex-shrink: 0;
+    }
   }
-
-  .song-card {
-    width: 300px;
-    flex-shrink: 0;
-  }
-
-  .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #4da3ff;
-    color: #000;
-    border: none;
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    font-size: 18px;
-    cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  }
-
-  .arrow:hover {
-    background: #ffffff;
-  }
-
-  .arrow-left {
-    left: 10px;
-  }
-
-  .arrow-right {
-    right: 10px;
-  }
-}
-
 </style>
 </head>
 
@@ -216,13 +180,7 @@
   </a>
 </marquee>
 
-<div class="songs-wrapper">
-
-  <button class="arrow arrow-left" onclick="scrollSongs(-1)">
-    <i class="fa-solid fa-chevron-left"></i>
-  </button>
-
-  <section class="songs-container" id="songsContainer">
+<section class="songs-container">
 
   <!-- SONG 1 -->
   <div class="song-card" data-search="bahudheeruda yesayya pattem titus">
@@ -279,29 +237,7 @@
     <a class="song-link" href="song4.html">Open Full Lyrics</a>
   </div>
 
-
-      <!-- SONG 4 -->
-  <div class="song-card" data-search="dayamayaa pattem david raju">
-    <div class="song-title">దయామయా</div>
-    <div class="song-writer">Written by Bro Pattem David Raju</div>
-    <div class="lyrics-box">
-నీ చిత్తమే నేరవేర్చుము 
-నా యెడల నా యేసయ్య 
-      
-నీ చిత్తము చేయుటే నాకు నేర్పించుము 
-దయామయా-కురుణామయాయ
-    </div>
-    <a class="song-link" href="song4.html">Open Full Lyrics</a>
-  </div>
-
-    
- </section>
-
-  <button class="arrow arrow-right" onclick="scrollSongs(1)">
-    <i class="fa-solid fa-chevron-right"></i>
-  </button>
-
-</div>
+</section>
 
 <footer>
   © ALL RIGHTS RESERVED TO TGM CHIRALA
@@ -326,23 +262,10 @@ function filterSongs() {
         : "none";
   }
 }
-
-  <script>
-function scrollSongs(direction) {
-  const container = document.getElementById("songsContainer");
-  const cardWidth = 320; // card width + gap
-  container.scrollLeft += direction * cardWidth;
-}
-</script>
-
 </script>
 
 </body>
 </html>
-
-
-
-
 
 
 
