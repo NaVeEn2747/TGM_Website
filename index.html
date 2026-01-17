@@ -137,20 +137,41 @@
     color: #aaa;
   }
 
-  @media (min-width: 992px) {
-    .songs-container {
-      flex-direction: row;
-      justify-content: center;
-      gap: 20px;
-      padding: 24px;
-      overflow-x: auto;
-    }
+@media (min-width: 992px) {
 
-    .song-card {
-      width: 300px;
-      flex-shrink: 0;
-    }
+  .songs-container {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    overflow: hidden;          /* ❌ no scrollbar */
+    position: relative;
   }
+
+  .songs-container {
+    animation: slideSongs 35s linear infinite;
+  }
+
+  .song-card {
+    width: 300px;
+    flex-shrink: 0;
+  }
+
+  /* ⏸ Pause animation on hover */
+  .songs-container:hover {
+    animation-play-state: paused;
+  }
+}
+
+  @keyframes slideSongs {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
 </style>
 </head>
 
@@ -279,6 +300,7 @@ function filterSongs() {
 
 </body>
 </html>
+
 
 
 
