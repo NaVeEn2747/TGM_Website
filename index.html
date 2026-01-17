@@ -138,20 +138,20 @@
     color: #aaa;
   }
 
-@media (min-width: 992px) {
-  .songs-container {
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    padding: 24px;
-    overflow-x: auto;     /* ✅ enables touchpad scroll */
-    scroll-behavior: smooth;
-  }
+  @media (min-width: 992px) {
+    .songs-container {
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+      padding: 24px;
+      overflow-x: auto;
+    }
 
-  .songs-container::-webkit-scrollbar {
-    height: 0;           /* ❌ hides scrollbar */
+    .song-card {
+      width: 300px;
+      flex-shrink: 0;
+    }
   }
-}
   
 </style>
 </head>
@@ -296,6 +296,7 @@ function filterSongs() {
 
 </body>
 </html>
+
 
 
 
