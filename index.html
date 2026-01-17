@@ -142,7 +142,8 @@
   .songs-wrapper {
     position: relative;
     width: 100%;
-    overflow: hidden; /* ❌ no scrollbar */
+   overflow-x: auto;
+   overflow-y: hidden;
   }
 
   .songs-container {
@@ -185,6 +186,10 @@
   .arrow-right {
     right: 10px;
   }
+}
+
+  .songs-container::-webkit-scrollbar {
+  height: 0;
 }
 
 </style>
@@ -338,6 +343,7 @@ function scrollSongs(direction) {
 
 </body>
 </html>
+
 
 
 
